@@ -1,0 +1,46 @@
+<div class="container">
+    <title>Item Management</title>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let itm of items">
+                <td>{{itm.id}}</td>
+                <td>{{itm.name}}</td>
+                <td>{{itm.description}}</td>
+                <td>{{itm.quantity}}</td>
+                <td>{{itm.price}}</td>
+                <td>
+                    <a class="btn btn-primary" [routerLink]="['/editItem',itm.id]">Edit</a>
+                    <button type="button" class="btn btn-danger" (click)="openDeleteModal(itm.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+
+  <div class="modal-fade" id="openDeleteModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modalLabel">Warning</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure to delete the record?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" (click)="delete()">Confirm Delete</button>
+            </div>
+        </div>
+    </div>
+  </div>
+
