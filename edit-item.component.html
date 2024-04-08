@@ -1,0 +1,26 @@
+<div class="container">
+    <legend>Update Item Details</legend>
+    <form>
+        <div class="mb-3">
+            <label for="txtid">Enter Item ID</label>
+            <input type="text" name="txtid"[(ngModel)]="itemForm.id" class="form-control" id="txtId"/>
+        </div>
+        <div class="mb-3">
+            <label for="txtname">Enter Item Name</label>
+            <input type="text" name="txtname"[(ngModel)]="itemForm.name" class="form-control" name="txtName"/>
+        </div>
+        <div class="mb-3">
+            <label for="txtdes">Enter Item Description</label>
+            <input type="text" name="txtdes"[(ngModel)]="itemForm.description" class="form-control" id="txtDes"/>
+        </div>
+        <div class="mb-3">
+            <label for="txtqty">Enter Item Quantity</label>
+            <input type="text" name="txtqty"[(ngModel)]="itemForm.quantity" class="form-control" id="txtQty"/>
+        </div>
+        <div class="mb-3">
+            <label for="txtprice">Enter Item Price</label>
+            <input type="text" name="txtprice"[(ngModel)]="itemForm.price" class="form-control" id="txtPrice"/>
+        </div>
+        <button type="button" (click)="update()" class="btn btn-primary">Update</button>
+    </form>
+</div>
